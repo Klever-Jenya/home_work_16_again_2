@@ -51,11 +51,11 @@ def user(uid: int):
         user_data = json.loads(request.data)
         u = User.query.get(uid)
         # id PUTом изменить не получиться
-        u.first_name = user_data["first_name"],
-        u.last_name = user_data["last_name"],
-        u.age = user_data["age"],
-        u.email = user_data["email"],
-        u.role = user_data["role"],
+        u.first_name = user_data["first_name"]
+        u.last_name = user_data["last_name"]
+        u.age = user_data["age"]
+        u.email = user_data["email"]
+        u.role = user_data["role"]
         u.phone = user_data["phone"]
 
         db.session.add(u)
@@ -111,13 +111,13 @@ def order(uid: int):
         order_data = json.loads(request.data)
         u = Order.query.get(uid)
         # id PUTом изменить не получиться
-        u.name = order_data["name"],
-        u.description = order_data["description"],
-        u.start_date = order_data["start_date"],
-        u.end_date = order_data["end_date"],
-        u.address = order_data["address"],
-        u.price = order_data["price"],
-        u.customer_id = order_data["customer_id"],
+        u.name = order_data["name"]
+        u.description = order_data["description"]
+        u.start_date = order_data["start_date"]
+        u.end_date = order_data["end_date"]
+        u.address = order_data["address"]
+        u.price = order_data["price"]
+        u.customer_id = order_data["customer_id"]
         u.executor_id = order_data["executor_id"]
 
         db.session.add(u)
@@ -167,7 +167,7 @@ def offer(uid: int):
         offer_data = json.loads(request.data)
         u = Offer.query.get(uid)
         # id PUTом изменить не получиться
-        u.order_id = offer_data["order_id"],
+        u.order_id = offer_data["order_id"]
         u.executor_id = offer_data["executor_id"]
 
         db.session.add(u)
